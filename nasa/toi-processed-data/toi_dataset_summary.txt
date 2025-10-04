@@ -1,0 +1,41 @@
+TESS TOI Dataset Processing Summary
+=================================
+
+Dataset Overview:
+- Training samples: 5392
+- Test samples: 2311
+- Total features: 51
+
+Class Distribution:
+- Training: {1: np.int64(4486), 0: np.int64(906)}
+- Test: {1: np.int64(1922), 0: np.int64(389)}
+
+Key Features:
+- pl_orbper
+- pl_trandurh
+- pl_trandep
+- pl_rade
+- pl_insol
+- pl_eqt
+- pl_orbpererr1
+- pl_orbpererr2
+- pl_trandurherr1
+- pl_trandurherr2
+- pl_trandeperr1
+- pl_trandeperr2
+- pl_radeerr1
+- pl_radeerr2
+- st_tmag
+- st_dist
+- st_teff
+- st_logg
+- st_rad
+- st_tmagerr1
+...
+
+Files Generated:
+- toi_train_data.csv: Training dataset (5392 samples)
+- toi_test_data.csv: Test dataset (2311 samples)
+- toi_dataset_summary.txt: This summary file
+
+The dataset is now ready for exoplanet detection machine learning!

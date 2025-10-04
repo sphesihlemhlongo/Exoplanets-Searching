@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 """
-Script to create a clean test dataset by removing target and disposition columns.
+Script to create a clean TOI (TESS) test dataset by removing target and disposition columns.
 This creates a realistic test scenario where we don't have the answers.
 """
 
 import pandas as pd
 import os
 
-def create_clean_test_data():
+def create_clean_test_data_toi():
     """
-    Remove target variables and disposition columns from test data
+    Remove target variables and disposition columns from TOI test data
     """
     # File paths
-    input_file = "nasa/processed_data/kepler_test_data.csv"
-    output_file = "nasa/processed_data/kepler_test_data_clean.csv"
+    input_file = "nasa/toi-processed-data/toi_test_data.csv"
+    output_file = "nasa/toi-processed-data/toi_test_data_clean.csv"
     
-    print("Creating clean test dataset...")
+    print("Creating clean TOI test dataset...")
     print(f"Input file: {input_file}")
     print(f"Output file: {output_file}")
     
@@ -30,9 +30,8 @@ def create_clean_test_data():
     
     # Columns to remove (target variables and disposition columns)
     columns_to_remove = [
-        'is_candidate',           # Target variable (binary)
-        'koi_disposition',        # Original disposition (CONFIRMED/CANDIDATE/FALSE POSITIVE)
-        'koi_pdisposition'        # Pipeline disposition
+        'is_planet',      # Target variable (binary)
+        'tfopwg_disp'     # Original disposition (PC, FP, CP, KP, etc.)
     ]
     
     # Check which columns exist in the dataset
@@ -53,7 +52,7 @@ def create_clean_test_data():
     
     # Save the clean dataset
     df_test_clean.to_csv(output_file, index=False)
-    print(f"✅ Clean test dataset saved to: {output_file}")
+    print(f"✅ Clean TOI test dataset saved to: {output_file}")
     
     # Show remaining columns
     print(f"\nRemaining columns ({len(df_test_clean.columns)}):")
@@ -67,7 +66,7 @@ def create_clean_test_data():
     return df_test_clean
 
 if __name__ == "__main__":
-    clean_data = create_clean_test_data()
-    print("\n🎯 Clean test dataset created successfully!")
+    clean_data = create_clean_test_data_toi()
+    print("\n🎯 Clean TOI test dataset created successfully!")
     print("   This dataset can now be used for realistic model evaluation")
     print("   where the true labels are unknown (as in real-world scenarios).")
