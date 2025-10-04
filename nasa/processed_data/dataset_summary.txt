@@ -1,16 +1,10 @@
 NASA Kepler Dataset Processing Summary
 ========================================
 
-Original dataset shape: 9564 rows, 51 columns
-Training set shape: (6376, 51)
-Testing set shape: (3188, 51)
+Total samples: 9564
+Training samples: 6376
+Testing samples: 3188
 Train/Test ratio: 2.00:1
 
-Binary Encoding:
+Binary Target Encoding:
 - koi_disposition: CONFIRMED/CANDIDATE -> 1, FALSE POSITIVE -> 0
-- koi_pdisposition: CANDIDATE -> 1, FALSE POSITIVE -> 0
-
-Files created:
-- processed_data\kepler_train_data.csv
-- processed_data\kepler_test_data.csv
-- processed_data\dataset_summary.txt
