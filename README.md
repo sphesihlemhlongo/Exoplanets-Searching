@@ -1,4 +1,4 @@
-# 🌌 Exoplanet Analysis (Kepler & TOI Datasets)
+# 🌌 Exoplanet Analysis (Kepler)
 
 This repository contains the **working Jupyter Notebook** for analyzing exoplanet data.  
 The main file is:
